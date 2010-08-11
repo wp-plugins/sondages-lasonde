@@ -1,7 +1,7 @@
 <?php
 /*******************************************************************************************
 Plugin Name: Sondages-Lasonde
-Version: 1.0
+Version: 1.0.0.3
 Plugin URI: http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/
 Description: Plugins Lasonde.fr pour ajouter des sondages facilement avec wordpress
 Author: Hermann Alexandre

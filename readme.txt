@@ -4,7 +4,7 @@ Donate link: http://www.lasonde.fr/
 Tags: sondages, faire un sondage, créer un sondages, sondages blog, polls, survey
 Requires at least: 2.8
 Tested up to: 2.8
-Stable tag: 1.0
+Stable tag: 1.0.0.2
 
 Lasonde.fr permet d'ajouter des sondages sur son blog, ses sites...
 Gratuits, Faciles à intégrer, les sondages lasonde.fr s'adapteront parfaitement à votre design

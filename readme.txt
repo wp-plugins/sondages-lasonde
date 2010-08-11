@@ -58,10 +58,10 @@ les sondages de votre compte lasonde.fr
 
 1. Vous avez besoin d'une clé lasonde.fr pour accéder à vos sondages depuis le plugin,
 Il faut vous rendre sur votre tableau de bord lasonde.fr,
-la clé API apraît en bas de la page, copiez la.
-2. Allez dans les options Sondages Lasonde.fr de votre wordpress puis coller la clé
+la clé API apparaît en bas de la page, copiez la.
+2. Allez dans les options Sondages Lasonde.fr de votre blog wordpress puis collez la clé
 dans le champ prévu. Puis Enregistrez.
-3. Le plugin trouve vos sondages automatiquement
+3. Le plugin trouve vos sondages automatiquement.
 
 
 == Un petit Exemple ==

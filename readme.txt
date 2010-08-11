@@ -48,7 +48,8 @@ les sondages de votre compte lasonde.fr
 
 == Changelog ==
 
-= 1.0 =
+= 1.0
+= 1.0.0.2 = Correction fichiers php
 
 
 == Upgrade Notice ==

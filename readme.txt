@@ -6,7 +6,8 @@ Requires at least: 2.8
 Tested up to: 2.8
 Stable tag: 1.0
 
-Lasonde.fr permet d'ajouter des sondages sur son blog
+Lasonde.fr permet d'ajouter des sondages sur son blog, ses sites...
+Gratuits, Faciles à intégrer, les sondages lasonde.fr s'adapteront parfaitement à votre design
 
 == Description ==
 

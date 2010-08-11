@@ -11,19 +11,20 @@ Gratuits, Faciles à intégrer, les sondages lasonde.fr s'adapteront parfaitemen
 
 == Description ==
 
-Lasonde.fr est un site de création de sondage,
+Lasonde.fr est un site de création de sondage.
 
 = Vous pouvez ajouter des sondages avec le plugin: = 
+- En utilisant le bouton Sondages Lasonde dans l'éditeur d'articles ou de pages (WYSIWYG),
 - En ajoutant un tag `[lasonde sd_id="XXX"]`* dans les articles et pages,
 - En en appellant la fonction `<?php LSD_print_script_tag("XXX"); ?>`* dans les templates et plugins
-*où XXX est l'id du sondage.
+*où XXX est l'id du sondage (L'id se récupere sur le site lasonde.)
 
 
 == Installation ==
 
 1. Dézippez et Uploadez `sondages-lasonde` dans le repertoire `/wp-content/plugins/`
 2. Activez le plugin via le menu plugins de WordPress
-3. Vous pouvez ajouter les tags, et fonctions dans description.
+3. Le Tag, la fonction php `LSD_print_script_tag` et `le bouton(WYSIWYG)` sont activés.
 Si vous rencontrez des problèmes avec l'installation merci de contacter L'administrateur.
 
 

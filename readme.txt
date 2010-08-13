@@ -35,7 +35,7 @@ Si vous rencontrez des problèmes avec l'installation merci de contacter L'admin
 Pour créer un sondage il faut avoir un compte lasonde.fr 
 et se rendre sur http://www.lasonde.fr/les-sondages/creer-un-sondage/
 
-= Que fais le plugin lasonde ? =
+= Que fait le plugin lasonde ? =
 
 Le plugin lasonde.fr permet d'ajouter sur vos blogs wordpress
 les sondages de votre compte lasonde.fr
@@ -48,7 +48,7 @@ les sondages de votre compte lasonde.fr
 
 == Changelog ==
 
-= 1.0
+= 1.0 =
 = 1.0.0.2 = Correction fichiers php
 = 1.0.0.3 = Correction fichiers php
 

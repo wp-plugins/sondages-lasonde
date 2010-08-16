@@ -25,7 +25,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 *******************************************************************************************/
-
+$test='';
 
 if ( !defined('WP_CONTENT_DIR') )
     define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
@@ -60,7 +60,10 @@ function LSD_register_js(){
 	//le script des sondages
 	wp_enqueue_script('lasonde_sondage_JS',LSD_CORE.'js/lasonde_sondages.js');
 }
-
+function LSD_get_list_sondages(){
+$form = file_get_contents(LSD_CORE.'bdd-sondages.php?step=5&secret_key='.get_option('lsd_user_api_secret'));
+return $form;
+}
 /**********************************************************/
 //function Page d'admin options
 /**********************************************************/
@@ -74,14 +77,14 @@ print '<div id="message" class="updated"><p>Options mises à jour!</p></div>';
 }
 ?>
 <div class="wrap">
-<div style="float:right">
+    <div style="float:right">
 		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 			<input type="hidden" name="cmd" value="_s-xclick">
 			<input type="hidden" name="hosted_button_id" value="QG7RJWETHLVZL">
 			<input type="image" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
 			<img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
 		</form>
-		</div>
+	</div>
 	<h2><img src="<?php print LSD_MEMBER_PLUGIN_IMAGES; ?>lasonde-logo.png" alt="Lasonde.fr" /> plugin</h2>
 	<?php
 	if(get_option('lsd_user_api_secret')=='')
@@ -107,6 +110,10 @@ print '<div id="message" class="updated"><p>Options mises à jour!</p></div>';
 		<br />
 		<input type="submit" name="submit_lsd_option" value="Enregistrer" />
 	</form>
+	<br />
+	<div>
+	
+	</div>
 </div>
 
 

@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) include_once('./../../../wp-blog-header.php');
 require_once(ABSPATH . '/wp-admin/admin.php');
-$form_list_sondage = file_get_contents(LSD_CORE.'bdd-sondages.php?step=5&secret_key='.get_option('lsd_user_api_secret'));
+$form_list_sondage = LSD_get_list_sondages();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

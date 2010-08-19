@@ -24,7 +24,7 @@
 		_mce_LSD_plugin : function() { //va ouvrir une pop up avec le choix du sondage
 			var postnumber = document.getElementById('post_ID').value;		
 			tinyMCE.activeEditor.windowManager.open( {
-				url : tinyMCE.activeEditor.documentBaseURI + '../../../wp-content/plugins/lasonde-sondages/lasonde_sondages_tag.php?post='+postnumber,
+				url : tinyMCE.activeEditor.documentBaseURI + '../../../wp-content/plugins/sondages-lasonde/lasonde_sondages_tag.php?post='+postnumber,
 				width : 440,
 				height : 220,
 				resizable : 'no',

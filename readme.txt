@@ -4,7 +4,7 @@ Donate link: http://www.lasonde.fr/
 Tags: sondages, faire un sondage, créer un sondages, sondages blog, polls, survey
 Requires at least: 2.8
 Tested up to: 2.8
-Stable tag: 1.0.0.4
+Stable tag: 1.0.0.5
 
 Lasonde.fr permet d'ajouter des sondages sur son blog, ses sites...
 Gratuits, Faciles à intégrer, les sondages lasonde.fr s'adapteront parfaitement à votre design
@@ -49,13 +49,30 @@ les sondages de votre compte lasonde.fr
 == Changelog ==
 
 = 1.0 =
-= 1.0.0.2 = Correction fichiers php
-= 1.0.0.3 = Correction fichiers php
+Base
+= 1.0.0.2 = 
+Correction fichiers php
+= 1.0.0.3 = 
+Correction fichiers php
+= 1.0.0.4 = 
+Correction fichiers php
+= 1.0.0.5 = 
+Correction fichiers Javascript: une erreur 404 dans l'appel de la pop up qui permet d'ajouter des sondages dans les pages et articles.
 
 
 == Upgrade Notice ==
 
 = 1.0 =
+Version de base
+= 1.0.0.2 = 
+Bugs
+= 1.0.0.3 = 
+Bugs
+= 1.0.0.4 = 
+Bugs 
+= 1.0.0.5 =
+Obligatoire pour fonctionnement Javascript et Fix de l'erreur 404 dans l'editeur. Obligatoire pour fonctionner correctement
+
 
 
 == Obtenir une clée Lasonde.fr ==

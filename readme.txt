@@ -11,7 +11,7 @@ Gratuits, Faciles à intégrer, les sondages lasonde.fr s'adapteront parfaitemen
 
 == Description ==
 
-Lasonde.fr est un site de création de sondage.
+Lasonde.frr est un site de création de sondage.
 
 = Vous pouvez ajouter des sondages avec le plugin: = 
 - En utilisant le bouton Sondages Lasonde dans l'éditeur d'articles ou de pages (WYSIWYG),

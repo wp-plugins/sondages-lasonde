@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: Lasonde.fr
 Donate link: http://www.lasonde.fr/
-Tags: sondages, faire un sondage, créer un sondages, sondages blog, polls, survey
+Tags: lasonde, lasonde.fr sondages, faire un sondage, créer un sondages, sondages blog, polls, survey
 Requires at least: 2.8
 Tested up to: 2.8
 Stable tag: 1.1

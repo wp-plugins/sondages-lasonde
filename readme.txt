@@ -7,11 +7,11 @@ Tested up to: 2.8
 Stable tag: 1.1
 
 Lasonde.fr permet d'ajouter des sondages sur son blog, ses sites...
-Gratuits, Faciles à intégrer, les sondages lasonde.fr s'adapteront parfaitement à votre design
-
+Simple et Gratuit.
 == Description ==
 
-Lasonde.fr est un site de création de sondage.
+Lasonde.fr est un site de création de sondage pour vos sites blogs, myspace etc...
+Et WOPRDRESS!
 
 = Vous pouvez ajouter des sondages avec le plugin: = 
 - En utilisant le bouton Sondages Lasonde dans l'éditeur d'articles ou de pages (WYSIWYG),

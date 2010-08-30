@@ -92,7 +92,7 @@ Bugs
 
 
 
-== Obtenir une clée Lasonde.fr ==
+== Obtenir une clé Lasonde.fr ==
 
 1. Vous avez besoin d'une clé lasonde.fr pour accéder à vos sondages depuis le plugin,
 Il faut vous rendre sur votre tableau de bord lasonde.fr,

@@ -1,24 +1,24 @@
 === Plugin Name ===
 Contributors: Lasonde.fr
 Donate link: http://www.lasonde.fr/
-Tags: sondages, faire un sondage, créer un sondages, sondages blog, polls, survey
+Tags: lasonde, lasonde.fr sondages, faire un sondage, créer un sondages, sondages blog, polls, survey
 Requires at least: 2.8
 Tested up to: 2.8
-Stable tag: 1.1
+Stable tag: 1.2
 
 Lasonde.fr permet d'ajouter des sondages sur son blog, ses sites...
-Simple et Gratuit.
+Gratuits, Faciles à intégrer, les sondages lasonde.fr s'adapteront parfaitement à votre design
+
 == Description ==
 
-Lasonde.fr est un site de création de sondage pour vos sites blogs, myspace etc...
-Et WOPRDRESS!
+Lasonde.fr est un site de création de sondage.
 
 = Vous pouvez ajouter des sondages avec le plugin: = 
 - En utilisant le bouton Sondages Lasonde dans l'éditeur d'articles ou de pages (WYSIWYG),
 - En utilisant les widgets Sondages-Lasonde dans vos sidebars,
 - En ajoutant un tag `[lasonde sd_id="XXX"]`* dans les articles et pages,
 - En en appellant la fonction `<?php LSD_print_script_tag("XXX"); ?>`* dans les templates et plugins
-*o√π XXX est l'id du sondage (L'id se récupere sur le site lasonde.)
+*où XXX est l'id du sondage (L'id se récupere sur le site lasonde.)
 
 
 == Installation ==
@@ -63,6 +63,10 @@ Correction fichiers Javascript: une erreur 404 dans l'appel de la pop up qui per
 = 1.1 = 
 Ajout du Widget Sondages-Lasonde qui permet d'ajouter des sondages dans les sidebars de vos blogs.
 Modification de la fonction qui obtient la liste de vos sondages
+= 1.2 = 
+- Refonte de l'adminisration du plugin, récriture du plugin avec class php
+- Obligatoire pour fonctionner correctement
+
 
 
 
@@ -81,6 +85,9 @@ Bugs
 = 1.1 = 
 - Ajout du Widget Sondages-Lasonde qui permet d'ajouter des sondages dans les sidebars de vos blogs.
 - Modification de la fonction qui obtient la liste de vos sondages
+- Obligatoire pour fonctionner correctement
+= 1.2 = 
+- Refonte de l'adminisration du plugin, réécriture du plugin avec class php
 - Obligatoire pour fonctionner correctement
 
 

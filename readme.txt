@@ -53,16 +53,16 @@ les sondages de votre compte lasonde.fr
 = 1.0 =
 Base
 = 1.0.0.2 = 
-Correction fichiers php
+- Correction fichiers php
 = 1.0.0.3 = 
-Correction fichiers php
+- Correction fichiers php
 = 1.0.0.4 = 
-Correction fichiers php
+- Correction fichiers php
 = 1.0.0.5 = 
-Correction fichiers Javascript: une erreur 404 dans l'appel de la pop up qui permet d'ajouter des sondages dans les pages et articles.
+- Correction fichiers Javascript: une erreur 404 dans l'appel de la pop up qui permet d'ajouter des sondages dans les pages et articles.
 = 1.1 = 
-Ajout du Widget Sondages-Lasonde qui permet d'ajouter des sondages dans les sidebars de vos blogs.
-Modification de la fonction qui obtient la liste de vos sondages
+- Ajout du Widget Sondages-Lasonde qui permet d'ajouter des sondages dans les sidebars de vos blogs.
+- Modification de la fonction qui obtient la liste de vos sondages
 = 1.2 = 
 - Refonte de l'adminisration du plugin, récriture du plugin avec class php
 - Obligatoire pour fonctionner correctement
@@ -73,13 +73,13 @@ Modification de la fonction qui obtient la liste de vos sondages
 == Upgrade Notice ==
 
 = 1.0 =
-Version de base
+- Version de base
 = 1.0.0.2 = 
-Bugs
+- Bugs
 = 1.0.0.3 = 
-Bugs
+- Bugs
 = 1.0.0.4 = 
-Bugs 
+- Bugs 
 = 1.0.0.5 =
 - Obligatoire pour fonctionnement Javascript et Fix de l'erreur 404 dans l'editeur. Obligatoire pour fonctionner correctement
 = 1.1 = 

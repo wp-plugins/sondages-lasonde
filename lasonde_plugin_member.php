@@ -147,6 +147,7 @@ class wp_LSD_sondages{
 		$html ='
 			<div style="text-align:center;">
 			<h4>Pour nous aider à supporter ce plugin :)</h4>
+			<a href="http://wordpress.org/extend/plugins/sondages-lasonde/" title="Votez Sondages-Lasonde" target="_blank">Si vous aimer ce plugin, dites le!<br />Noter ce plugin</a>
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<input type="hidden" name="cmd" value="_s-xclick">
 				<input type="hidden" name="hosted_button_id" value="QG7RJWETHLVZL">

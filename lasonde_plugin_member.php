@@ -1,7 +1,7 @@
 <?php
 /*******************************************************************************************
 Plugin Name: Sondages-Lasonde
-Version: 1.2
+Version: 1.2.1
 Plugin URI: http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/
 Description: Plugins Lasonde.fr pour ajouter des sondages facilement avec wordpress
 Author: Lasonde.fr
@@ -147,7 +147,7 @@ class wp_LSD_sondages{
 		$html ='
 			<div style="text-align:center;">
 			<h4>Pour nous aider à supporter ce plugin :)</h4>
-			<a href="http://wordpress.org/extend/plugins/sondages-lasonde/" title="Votez Sondages-Lasonde" target="_blank">Si vous aimer ce plugin, dites le!<br />Noter ce plugin</a>
+			<a href="http://wordpress.org/extend/plugins/sondages-lasonde/" title="Votez Sondages-Lasonde" target="_blank">Si vous aimer ce plugin, dites le!<br />Noter ce plugin</a><br />
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<input type="hidden" name="cmd" value="_s-xclick">
 				<input type="hidden" name="hosted_button_id" value="QG7RJWETHLVZL">

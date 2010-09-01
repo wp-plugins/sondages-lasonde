@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: Lasonde.fr
-Donate link: http://www.lasonde.fr/
+Donate link: http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/
 Tags: lasonde, lasonde.fr sondages, faire un sondage, créer un sondages, sondages blog, polls, survey
 Requires at least: 2.8
 Tested up to: 2.8
-Stable tag: 1.2
+Stable tag: 1.2.1
 
 Lasonde.fr permet d'ajouter des sondages sur son blog, ses sites...
 Gratuits, Faciles à intégrer, les sondages lasonde.fr s'adapteront parfaitement à votre design
@@ -66,7 +66,9 @@ Base
 = 1.2 = 
 - Refonte de l'adminisration du plugin, récriture du plugin avec class php
 - Obligatoire pour fonctionner correctement
-
+= 1.2.1 = 
+- Modification de fonction php qui vérifie la clé secrète Lasonde.fr
+- Obligatoire pour fonctionner correctement
 
 
 
@@ -89,7 +91,9 @@ Base
 = 1.2 = 
 - Refonte de l'adminisration du plugin, réécriture du plugin avec class php
 - Obligatoire pour fonctionner correctement
-
+= 1.2.1 = 
+- Modification de fonction php qui vérifie la clé secrète Lasonde.fr
+- Obligatoire pour fonctionner correctement
 
 
 == Obtenir une clé Lasonde.fr ==

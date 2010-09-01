@@ -167,7 +167,7 @@ class wp_LSD_sondages{
 		print $html;
 	} 
 	function LSD_get_Premium_box(){
-		$html = '
+		$html ='
 		<table border="0" width="100%">
 			<tr><th valign="top" style="text-align:center;">Membre </th><td valign="top" style="text-align:center;">'.$this->LSD_member_is_premium().'</td></tr>';
 			if($this->LSD_member_is_premium("bool")==0){

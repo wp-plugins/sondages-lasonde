@@ -7,7 +7,7 @@ Tested up to: 2.8
 Stable tag: 1.2.1
 
 Lasonde.fr permet d'ajouter des sondages sur son blog, ses sites...
-Gratuits, Faciles à intégrer, les sondages lasonde.fr s'adapteront parfaitement à votre design
+Gratuits et Simples à intégrer.
 
 == Description ==
 
@@ -30,26 +30,35 @@ Si vous rencontrez des problèmes avec l'installation merci de contacter L'admin
 
 
 == Frequently Asked Questions ==
-
 = Comment créer un sondage ? =
-
 Pour créer un sondage il faut avoir un compte lasonde.fr 
 et se rendre sur http://www.lasonde.fr/les-sondages/creer-un-sondage/
 
 = Que fait le plugin lasonde ? =
-
 Le plugin lasonde.fr permet d'ajouter sur vos blogs wordpress
 les sondages de votre compte lasonde.fr
 
-== Screenshots ==
+= Comment obtenir une clé Lasonde.fr =
+1. Vous avez besoin d'une clé lasonde.fr pour accéder à vos sondages depuis le plugin,
+Il faut vous rendre sur votre  sur [votre Tableau de bord Lasonde.fr](http://www.lasonde.fr/les-sondages/tableau-de-bord/ "Tableau de bord Lasonde.fr"),
+la clé API apparaît en bas de la page, copiez la.
+2. Allez dans les options Sondages Lasonde.fr de votre blog wordpress puis collez la clé
+dans le champ prévu. Puis Enregistrez.
+3. Le plugin trouve vos sondages automatiquement.
 
+= Le plugin ne fonctionne pas sur mon serveur =
+Si votre serveur web ne permet pas l’exécution de la fonction php `file_get_contents();` alors le plugin ne peut pas fonctionner.
+Pour activer cette fonction sur votre serveur, vous devez avoir une version de php >4.3 et vérifier que la variable
+`allow_url_fopen = On` est bien dans votre php.ini
+Il semble que les serveurs OVH ou 1and1 mutualisés n’autorisent pas cette utilisation.
+
+== Screenshots ==
 1. Exemple de popup d'ajout de sondages dans un article/page
 2. Screeshot de la page de configuration
 3. Screeshot de la création d'un widget
 
 
 == Changelog ==
-
 = 1.0 =
 Base
 = 1.0.0.2 = 
@@ -73,7 +82,6 @@ Base
 
 
 == Upgrade Notice ==
-
 = 1.0 =
 - Version de base
 = 1.0.0.2 = 
@@ -95,17 +103,11 @@ Base
 - Modification de fonction php qui vérifie la clé secrète Lasonde.fr
 - Obligatoire pour fonctionner correctement
 
-
-== Obtenir une clé Lasonde.fr ==
-
-1. Vous avez besoin d'une clé lasonde.fr pour accéder à vos sondages depuis le plugin,
-Il faut vous rendre sur votre tableau de bord lasonde.fr,
-la clé API apparaît en bas de la page, copiez la.
-2. Allez dans les options Sondages Lasonde.fr de votre blog wordpress puis collez la clé
-dans le champ prévu. Puis Enregistrez.
-3. Le plugin trouve vos sondages automatiquement.
-
-
 == Un petit Exemple ==
 Allez sur [Lasonde.fr/plugin wordpress](http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/ "Installer Sondages Lasonde sur wordpress") 
 
+== !!! ==
+Si votre serveur web ne permet pas l’exécution de la fonction php `file_get_contents();` alors le plugin ne peut pas fonctionner.
+Pour activer cette fonction sur votre serveur, vous devez avoir une version de php >4.3 et vérifier que la variable
+`allow_url_fopen = On` est bien dans votre php.ini
+Il semble que les serveurs OVH ou 1and1 mutualisés n’autorisent pas cette utilisation.

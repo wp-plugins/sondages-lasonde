@@ -49,7 +49,7 @@ dans le champ prévu. Puis Enregistrez.
 = Le plugin ne fonctionne pas sur mon serveur =
 Si votre serveur web ne permet pas l’exécution de la fonction php `file_get_contents();` alors le plugin ne peut pas fonctionner.
 Pour activer cette fonction sur votre serveur, vous devez avoir une version de php >4.3 et vérifier que la variable
-`allow_url_fopen = On` est bien dans votre php.ini
+`allow_url_fopen=On` est bien dans votre php.ini
 Il semble que les serveurs OVH ou 1and1 mutualisés n’autorisent pas cette utilisation.
 
 == Screenshots ==

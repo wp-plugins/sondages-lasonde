@@ -11,9 +11,25 @@ Gratuits et Simples à intégrer.
 
 == Description ==
 
-Lasonde.fr est un site de création de sondage.
+Lasonde permet de créer des sondages.
+
+= Fonctionnalités: = 
+
+- Réponses (radio ou checkbox pour multi votes) (illimitées)
+- Date de début du sondage
+- Date de fin du sondage
+- Blocage par IP/cookie des votes avec choix de la durée de restriction (évite qu'une personne vote 2 fois de suite.)
+- CSS => Choix du style du sondage, créez votre style entièrement paramétrable en CSS ou utilisez les styles proposés par Lasonde.fr
+- Privés ou publics (pubic = visible par les visiteurs Lasonde.fr)
+- Effets des barres de résultats (slide, élastiques, etc...)
+- Graphiques paramétrables avec API Google Chart
+- Export des résultats : XML et CSV
+- Suivi des résultats en temps réel via l'administration.
+- Export et partage des sondages via un code javascript à coller sur votre site. (Ou automatiquement via le plugin)
+- Montrer ou cacher les résultats.
 
 = Vous pouvez ajouter des sondages avec le plugin: = 
+
 - En utilisant le bouton Sondages Lasonde dans l'éditeur d'articles ou de pages (WYSIWYG),
 - En utilisant les widgets Sondages-Lasonde dans vos sidebars,
 - En ajoutant un tag `[lasonde sd_id="XXX"]`* dans les articles et pages,

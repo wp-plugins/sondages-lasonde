@@ -109,7 +109,7 @@ class wp_LSD_sondages{
 			   </div>
 			</div>
 			<?php if(get_option('lsd_user_api_secret')=='')
-				print '<div id="message" class="error fade"><p>Pour récupérer vos sondages, il faut renseigner votre clé secrète lasonde.fr (disponible dans votre compte sur <a href="http://www.lasonde.fr/les-sondages/tableau-de-bord/" title="lasonde.fr">Lasonde.fr</a>)</p></div>';
+				print '<div id="message" class="error fade"><p>Pour récupérer vos sondages, il faut renseigner votre clé secrète lasonde.fr (disponible dans votre compte sur <a href="http://www.lasonde.fr/gestion/tableau-de-bord/" title="lasonde.fr">Lasonde.fr</a>)</p></div>';
 			?>
 		</div>
 		</form>
@@ -127,7 +127,7 @@ class wp_LSD_sondages{
 		</p>
 			<table border="0">
 			<tr>
-				<th>Clé secrète Lasonde</th><td><input type="text" name="lsd_user_api_secret" value="'.get_option('lsd_user_api_secret').'" /> <i>Cette clé est privée, vous pouvez l\'obtenir sur <a href="http://www.lasonde.fr/les-sondages/tableau-de-bord/" title="lasonde.fr">Lasonde.fr / Tableau de bord</a></i></td>
+				<th>Clé secrète Lasonde</th><td><input type="text" name="lsd_user_api_secret" value="'.get_option('lsd_user_api_secret').'" /> <i>Cette clé est privée, vous pouvez l\'obtenir sur <a href="http://www.lasonde.fr/gestion/tableau-de-bord/" title="lasonde.fr">Lasonde.fr / Tableau de bord</a></i></td>
 			</tr>
 			</table>
 			<br />

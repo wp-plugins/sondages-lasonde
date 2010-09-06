@@ -32,7 +32,7 @@ Si vous rencontrez des problèmes avec l'installation merci de contacter L'admin
 == Frequently Asked Questions ==
 = Comment créer un sondage ? =
 Pour créer un sondage il faut avoir un compte lasonde.fr 
-et se rendre sur http://www.lasonde.fr/les-sondages/creer-un-sondage/
+et se rendre sur http://www.lasonde.fr/gestion/creer-un-sondage/
 
 = Que fait le plugin lasonde ? =
 Le plugin lasonde.fr permet d'ajouter sur vos blogs wordpress
@@ -40,7 +40,7 @@ les sondages de votre compte lasonde.fr
 
 = Comment obtenir une clé Lasonde.fr =
 1. Vous avez besoin d'une clé lasonde.fr pour accéder à vos sondages depuis le plugin,
-Il faut vous rendre sur votre  sur [votre Tableau de bord Lasonde.fr](http://www.lasonde.fr/les-sondages/tableau-de-bord/ "Tableau de bord Lasonde.fr"),
+Il faut vous rendre sur votre  sur [votre Tableau de bord Lasonde.fr](http://www.lasonde.fr/gestion/tableau-de-bord/ "Tableau de bord Lasonde.fr"),
 la clé API apparaît en bas de la page, copiez la.
 2. Allez dans les options Sondages Lasonde.fr de votre blog wordpress puis collez la clé
 dans le champ prévu. Puis Enregistrez.

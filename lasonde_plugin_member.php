@@ -51,6 +51,9 @@ class wp_LSD_sondages{
 		add_action('init', array(&$this,'LSD_add_buttons_editor'));
 		add_shortcode('lasonde', array(&$this,'LSD_script_tag'));
 		add_action('widgets_init', array(&$this,'LSD_register_widget'));
+		add_action('wp_print_scripts', array(&$this,'LSD_register_js'));
+		add_action('admin_print_scripts-'.$this->LSD_admin_hook, array(&$this,'LSD_admin_register_js'));
+
 	}
 	
 	/**********************************************************/
@@ -59,8 +62,6 @@ class wp_LSD_sondages{
 	function LSD_plugin_member_init() {
 		//on ajoute le lien vers la page admin avec la fonction admin
 		$this->LSD_admin_hook = add_menu_page(LSD_PAGE_MEMBER_OPTIONS, LSD_PLUGIN_TITLE, 'administrator', LSD_PAGE_MEMBER_OPTIONS, array($this,Lasonde_plugin_options), LSD_MEMBER_PLUGIN_IMAGES.'lasonde_icone.gif');
-		add_action('admin_print_scripts-'.$this->LSD_admin_hook, array(&$this,'LSD_admin_register_js'));
-		add_action('wp_print_scripts', array(&$this,'LSD_register_js'));
 	}
 	//widget init
 	function LSD_register_widget(){
@@ -71,9 +72,10 @@ class wp_LSD_sondages{
 	/**********************************************************/
 	function LSD_register_js(){
 		//le script des sondages
-		wp_enqueue_script('lasonde_sondage_JS',LSD_CORE.'js/lasonde_sondages.js');
+		wp_enqueue_script('lasonde_sondage_JS',LSD_CORE.'js/lasonde_sondages_min.js');
 	}
 	function LSD_admin_register_js(){
+		wp_enqueue_script('lasonde_sondage_JS',LSD_CORE.'js/lasonde_sondages_min.js');
 		wp_enqueue_script('common');
 		wp_enqueue_script('wp-lists');
 		wp_enqueue_script('postbox');
@@ -109,7 +111,7 @@ class wp_LSD_sondages{
 			   </div>
 			</div>
 			<?php if(get_option('lsd_user_api_secret')=='')
-				print '<div id="message" class="error fade"><p>Pour récupérer vos sondages, il faut renseigner votre clé secrète lasonde.fr (disponible dans votre compte sur <a href="http://www.lasonde.fr/gestion/tableau-de-bord/" title="lasonde.fr">Lasonde.fr</a>)</p></div>';
+				print '<div id="message" class="error fade"><p>Pour récupérer vos sondages, il faut renseigner votre clé secrète lasonde.fr (disponible dans votre compte sur <a href="http://www.lasonde.fr/les-sondages/tableau-de-bord/" title="lasonde.fr">Lasonde.fr</a>)</p></div>';
 			?>
 		</div>
 		</form>
@@ -127,7 +129,7 @@ class wp_LSD_sondages{
 		</p>
 			<table border="0">
 			<tr>
-				<th>Clé secrète Lasonde</th><td><input type="text" name="lsd_user_api_secret" value="'.get_option('lsd_user_api_secret').'" /> <i>Cette clé est privée, vous pouvez l\'obtenir sur <a href="http://www.lasonde.fr/gestion/tableau-de-bord/" title="lasonde.fr">Lasonde.fr / Tableau de bord</a></i></td>
+				<th>Clé secrète Lasonde</th><td><input type="text" name="lsd_user_api_secret" value="'.get_option('lsd_user_api_secret').'" /> <i>Cette clé est privée, vous pouvez l\'obtenir sur <a href="http://www.lasonde.fr/les-sondages/tableau-de-bord/" title="lasonde.fr">Lasonde.fr / Tableau de bord</a></i></td>
 			</tr>
 			</table>
 			<br />
@@ -296,6 +298,11 @@ $wp_LSD_sondages = new wp_LSD_sondages();
 function LSD_print_script_tag($sd_id){
 	global $wp_LSD_sondages;
 	$wp_LSD_sondages->LSD_print_script_tag($sd_id);
+}
+//Permet de rendre compatible l'ancienne version de la fonction.
+function LSD_get_script_tag($sd_id){
+	global $wp_LSD_sondages;
+	return $wp_LSD_sondages->LSD_get_script_tag($sd_id);
 }
 function LSD_get_list_sondages($select_id){
 	global $wp_LSD_sondages;

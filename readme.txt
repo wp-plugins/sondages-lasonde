@@ -4,7 +4,7 @@ Donate link: http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/
 Tags: lasonde, lasonde.fr sondages, faire un sondage, créer un sondages, sondages blog, polls, survey
 Requires at least: 2.8
 Tested up to: 2.8
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 
 Lasonde.fr permet d'ajouter des sondages sur son blog, ses sites...
 Gratuits et Simples à intégrer.
@@ -94,7 +94,9 @@ Base
 = 1.2.1 = 
 - Modification de fonction php qui vérifie la clé secrète Lasonde.fr
 - Obligatoire pour fonctionner correctement
-
+= 1.2.2 =
+- Minify du fichier JS des sondages
+- Changement appel script JS
 
 
 == Upgrade Notice ==
@@ -118,6 +120,9 @@ Base
 = 1.2.1 = 
 - Modification de fonction php qui vérifie la clé secrète Lasonde.fr
 - Obligatoire pour fonctionner correctement
+= 1.2.2 =
+- Minify du fichier JS des sondages
+- Changement appel script JS
 
 == Un petit Exemple ==
 Allez sur [Lasonde.fr/plugin wordpress](http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/ "Installer Sondages Lasonde sur wordpress") 

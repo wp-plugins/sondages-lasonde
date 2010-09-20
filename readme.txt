@@ -97,6 +97,10 @@ Base
 = 1.2.2 =
 - Minify du fichier JS des sondages
 - Changement appel script JS
+= 1.2.3 =
+- Modification postbox
+- Changement wp_enqueu_script
+
 
 
 == Upgrade Notice ==
@@ -123,6 +127,10 @@ Base
 = 1.2.2 =
 - Minify du fichier JS des sondages
 - Changement appel script JS
+= 1.2.3 =
+- Modification postbox
+- Changement wp_enqueu_script
+
 
 == Un petit Exemple ==
 Allez sur [Lasonde.fr/plugin wordpress](http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/ "Installer Sondages Lasonde sur wordpress") 

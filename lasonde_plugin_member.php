@@ -1,7 +1,7 @@
 <?php
 /*******************************************************************************************
 Plugin Name: Sondages-Lasonde
-Version: 1.2.2
+Version: 1.2.3
 Plugin URI: http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/
 Description: Plugins Lasonde.fr pour ajouter des sondages facilement avec wordpress
 Author: Lasonde.fr
@@ -30,7 +30,7 @@ if ( !defined('WP_CONTENT_DIR') )
     define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
     
 if ( !defined('LSD_PAGE_MEMBER_OPTIONS') )
-    define( 'LSD_PAGE_MEMBER_OPTIONS', 'lasonde-plugin-options');
+    define( 'LSD_PAGE_MEMBER_OPTIONS', 'lasonde_plugin_options');
     
 if ( !defined('LSD_MEMBER_PLUGIN_IMAGES') )
     define( 'LSD_MEMBER_PLUGIN_IMAGES',  get_bloginfo('siteurl').'/wp-content/plugins/'.basename(dirname(__FILE__)).'/images/');
@@ -52,8 +52,6 @@ class wp_LSD_sondages{
 		add_shortcode('lasonde', array(&$this,'LSD_script_tag'));
 		add_action('widgets_init', array(&$this,'LSD_register_widget'));
 		add_action('wp_print_scripts', array(&$this,'LSD_register_js'));
-		add_action('admin_print_scripts-'.$this->LSD_admin_hook, array(&$this,'LSD_admin_register_js'));
-
 	}
 	
 	/**********************************************************/
@@ -62,10 +60,18 @@ class wp_LSD_sondages{
 	function LSD_plugin_member_init() {
 		//on ajoute le lien vers la page admin avec la fonction admin
 		$this->LSD_admin_hook = add_menu_page(LSD_PAGE_MEMBER_OPTIONS, LSD_PLUGIN_TITLE, 'administrator', LSD_PAGE_MEMBER_OPTIONS, array($this,Lasonde_plugin_options), LSD_MEMBER_PLUGIN_IMAGES.'lasonde_icone.gif');
+		add_action('load-'.$this->LSD_admin_hook, array(&$this,'LSD_admin_register_js'));
 	}
 	//widget init
 	function LSD_register_widget(){
 		return register_widget("LSD_widget");
+	}
+ 
+	function LSD_screen_layout($columns, $screen) {
+		if ($screen == LSD_PAGE_MEMBER_OPTIONS) {
+			$columns[LSD_PAGE_MEMBER_OPTIONS] = 2;
+		}
+		return $columns;
 	}
 	/**********************************************************/
 	//function style et js
@@ -75,10 +81,14 @@ class wp_LSD_sondages{
 		wp_enqueue_script('lasonde_sondage_JS',LSD_CORE.'js/lasonde_sondages_min.js');
 	}
 	function LSD_admin_register_js(){
-		wp_enqueue_script('lasonde_sondage_JS',LSD_CORE.'js/lasonde_sondages_min.js');
 		wp_enqueue_script('common');
-		wp_enqueue_script('wp-lists');
+		wp_enqueue_script('wp-list');
 		wp_enqueue_script('postbox');
+	    wp_enqueue_script('lasonde_sondage_JS',LSD_CORE.'js/lasonde_sondages_min.js');
+		add_meta_box("LSD_options", 'Options', array(&$this,LSD_get_options_box),  $this->LSD_admin_hook , 'normal', 'core');
+		add_meta_box("LSD_Premium", 'Status Lasonde.fr', array(&$this,LSD_get_Premium_box),  $this->LSD_admin_hook , 'side', 'core');
+		add_meta_box("LSD_info", 'Informations', array(&$this,LSD_get_info_box),  $this->LSD_admin_hook , 'side', 'core');
+		add_meta_box("LSD_donation", 'FAITES UN DON', array(&$this,LSD_get_donation_box),  $this->LSD_admin_hook , 'side', 'core');
 	}
 	function LSD_get_list_sondages($select_id){
 		$form = file_get_contents(LSD_CORE.'bdd-sondages.php?step=5&select_id='.$select_id.'&secret_key='.get_option('lsd_user_api_secret'));
@@ -86,6 +96,8 @@ class wp_LSD_sondages{
 	}
 	//creation page admin
 	function Lasonde_plugin_options(){
+		 add_filter('screen_layout_columns', array(&$this, 'LSD_screen_layout'), 10, 2);
+
 		//on sauvegarde les options
 		if($_POST['submit_lsd_option']){
 			foreach($_POST as $post=>$value){
@@ -93,21 +105,17 @@ class wp_LSD_sondages{
 			}
 		print '<div id="message" class="updated"><p>Options mises à jour!</p></div>';
 		}
-		add_meta_box("LSD_options", 'Options', array(&$this,LSD_get_options_box), LSD_PAGE_MEMBER_OPTIONS, 'advanced',  'default');
-		add_meta_box("LSD_Premium", 'Status Lasonde.fr', array(&$this,LSD_get_Premium_box), LSD_PAGE_MEMBER_OPTIONS, 'side',  'default');
-		add_meta_box("LSD_info", 'Informations', array(&$this,LSD_get_info_box), LSD_PAGE_MEMBER_OPTIONS, 'side',  'default');
-		add_meta_box("LSD_donation", 'FAITES UN DON', array(&$this,LSD_get_donation_box), LSD_PAGE_MEMBER_OPTIONS, 'side',  'default');
 		?>
 		<div class="wrap" id="LSD_wrap">
 			<h2><img src="<?php print LSD_MEMBER_PLUGIN_IMAGES; ?>lasonde-logo.png" alt="Lasonde.fr" /> plugin</h2>
 		<form action="#" method="post">
 		<div id="poststuff" class="metabox-holder has-right-sidebar">
 			<div id="side-info-column" class="inner-sidebar">
-				<?php do_meta_boxes(LSD_PAGE_MEMBER_OPTIONS,'side',null); ?>
+				<?php do_meta_boxes($this->LSD_admin_hook,'side',null); ?>
 			</div>
 			<div id="post-body" class="has-sidebar">
 				<div id="post-body-content" class="has-sidebar-content">
-					<?php do_meta_boxes(LSD_PAGE_MEMBER_OPTIONS,'advanced',null); ?>
+					<?php do_meta_boxes($this->LSD_admin_hook,'normal',null); ?>
 			   </div>
 			</div>
 			<?php if(get_option('lsd_user_api_secret')=='')
@@ -115,11 +123,22 @@ class wp_LSD_sondages{
 			?>
 		</div>
 		</form>
+		<script type="text/javascript">
+		//<![CDATA[
+		jQuery(document).ready( function($) {
+			// close postboxes that should be closed
+			$('.if-js-closed').removeClass('if-js-closed').addClass('closed');
+			// postboxes setup
+			postboxes.add_postbox_toggles('<?php echo $this->LSD_admin_hook; ?>');
+		});
+		//]]>
+	</script>
 		</div>
 	<?php } 
 	
 	//options
 	function LSD_get_options_box(){ 
+		
 	   print'<h4>Vous pouvez ajouter des sondages de différentes manières:</h4>
 		<p>- Dans vos articles et dans vos pages, soit via l\'outil présent dans l\'éditeur soit en ajoutant un code directement dans le texte.<br />
 		exemple code manuel: <i><b>[lasonde sd_id="<span style="color:#FF0000">XXX</span>"]</b></i></p>
@@ -135,14 +154,7 @@ class wp_LSD_sondages{
 			<br />
 			<p style="text-align:right;"><input type="submit" name="submit_lsd_option" value="Enregistrer" /></p>
 		<br />';
-		print '
-		<script type="text/javascript">
-			jQuery(document).ready( function($) {
-			// close postboxes that should be closed
-			jQuery(".if-js-closed").removeClass("if-js-closed").addClass("closed");
-			postboxes.add_postbox_toggles("'.LSD_PAGE_MEMBER_OPTIONS.'"); //For WP2.7 and above
-			});
-		</script>';
+		
 	} 
 	//dons
 	function LSD_get_donation_box(){ 

@@ -1,11 +1,12 @@
 <?php
 /*******************************************************************************************
 Plugin Name: Sondages-Lasonde
-Version: 1.2.3
+Version: 1.2.4
 Plugin URI: http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/
 Description: Plugins Lasonde.fr pour ajouter des sondages facilement avec wordpress
 Author: Lasonde.fr
 Author URI: http://www.lasonde.fr/nous-contacter/
+Text Domain: sondages-lasonde
 *******************************************************************************************/
 
 /*******************************************************************************************
@@ -42,7 +43,7 @@ if ( !defined('LSD_CORE') )
     define( 'LSD_CORE',  'http://www.lasonde.fr/wp-content/plugins/lasonde/LSD_core/');
 
 if ( !defined('LSD_PLUGIN_TITLE') )
-    define( 'LSD_PLUGIN_TITLE', 'Sondages Lasonde.fr' );
+    define( 'LSD_PLUGIN_TITLE', __('Sondages Lasonde.fr','sondages-lasonde') );
 
 class wp_LSD_sondages{
 
@@ -103,7 +104,7 @@ class wp_LSD_sondages{
 			foreach($_POST as $post=>$value){
 				update_option($post,$value);
 			}
-		print '<div id="message" class="updated"><p>Options mises à jour!</p></div>';
+		print '<div id="message" class="updated"><p>'.__('Options mises à jour!','sondages-lasonde').'</p></div>';
 		}
 		?>
 		<div class="wrap" id="LSD_wrap">
@@ -119,7 +120,7 @@ class wp_LSD_sondages{
 			   </div>
 			</div>
 			<?php if(get_option('lsd_user_api_secret')=='')
-				print '<div id="message" class="error fade"><p>Pour récupérer vos sondages, il faut renseigner votre clé secrète lasonde.fr (disponible dans votre compte sur <a href="http://www.lasonde.fr/les-sondages/tableau-de-bord/" title="lasonde.fr">Lasonde.fr</a>)</p></div>';
+				print '<div id="message" class="error fade"><p>'.__('Pour récupérer vos sondages, il faut renseigner votre clé secrète lasonde.fr (disponible dans votre compte sur <a href="http://www.lasonde.fr/les-sondages/tableau-de-bord/','sondages-lasonde').'" title="lasonde.fr">Lasonde.fr</a>)</p></div>';
 			?>
 		</div>
 		</form>
@@ -139,20 +140,20 @@ class wp_LSD_sondages{
 	//options
 	function LSD_get_options_box(){ 
 		
-	   print'<h4>Vous pouvez ajouter des sondages de différentes manières:</h4>
-		<p>- Dans vos articles et dans vos pages, soit via l\'outil présent dans l\'éditeur soit en ajoutant un code directement dans le texte.<br />
+	   print'<h4>'.__('Vous pouvez ajouter des sondages de différentes manières:','sondages-lasonde').'</h4>
+		<p>'.__('- Dans vos articles et dans vos pages, soit via l\'outil présent dans l\'éditeur soit en ajoutant un code directement dans le texte.<br />
 		exemple code manuel: <i><b>[lasonde sd_id="<span style="color:#FF0000">XXX</span>"]</b></i></p>
 		<p>- Dans l\'editeur d\'apparence, en ajoutant des widgets Sondages-Lasonde à vos sidebars.</p>
 		<p>- Directement dans vos templates en appellant la fonction "<i><b>LSD_print_script_tag(<span style="color:#FF0000">XXX</span>);</b></i>"
 		 où <b>XXX</b> est l\'identifiant du sondage fourni dans votre tableau de bord lasonde.fr</p>
-		</p>
+		','sondages-lasonde').'</p>
 			<table border="0">
 			<tr>
-				<th>Clé secrète Lasonde</th><td><input type="text" name="lsd_user_api_secret" value="'.get_option('lsd_user_api_secret').'" /> <i>Cette clé est privée, vous pouvez l\'obtenir sur <a href="http://www.lasonde.fr/les-sondages/tableau-de-bord/" title="lasonde.fr">Lasonde.fr / Tableau de bord</a></i></td>
+				<th>'.__('Clé secrète Lasonde','sondages-lasonde').'</th><td><input type="text" name="lsd_user_api_secret" value="'.get_option('lsd_user_api_secret').'" /> <i>'.__('Cette clé est privée, vous pouvez l\'obtenir sur <a href="http://www.lasonde.fr/les-sondages/tableau-de-bord/" title="lasonde.fr">Lasonde.fr / Tableau de bord','sondages-lasonde').'</a></i></td>
 			</tr>
 			</table>
 			<br />
-			<p style="text-align:right;"><input type="submit" name="submit_lsd_option" value="Enregistrer" /></p>
+			<p style="text-align:right;"><input type="submit" name="submit_lsd_option" value="'.__('Enregistrer','sondages-lasonde').'" /></p>
 		<br />';
 		
 	} 
@@ -160,12 +161,12 @@ class wp_LSD_sondages{
 	function LSD_get_donation_box(){ 
 		$html ='
 			<div style="text-align:center;">
-			<h4>Pour nous aider à supporter ce plugin :)</h4>
-			<a href="http://wordpress.org/extend/plugins/sondages-lasonde/" title="Votez Sondages-Lasonde" target="_blank">Si vous aimer ce plugin, dites le!<br />Noter ce plugin</a><br />
+			<h4>'.__('Pour nous aider à supporter ce plugin :)','sondages-lasonde').'</h4>
+			<a href="http://wordpress.org/extend/plugins/sondages-lasonde/" title="'.__('Votez Sondages-Lasonde','sondages-lasonde').'" target="_blank">'.__('Si vous aimer ce plugin, dites le!','sondages-lasonde').'<br />'.__('Noter ce plugin','sondages-lasonde').'</a><br />
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<input type="hidden" name="cmd" value="_s-xclick">
 				<input type="hidden" name="hosted_button_id" value="QG7RJWETHLVZL">
-				<input type="image" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
+				<input type="image" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="'.__('PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !','sondages-lasonde').'">
 				<img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
 			</form>
 			</div>';
@@ -175,26 +176,24 @@ class wp_LSD_sondages{
 	function LSD_get_info_box(){ 
 		$html ='
 			<div style="text-align:left;">
-				<a style="text-decoration:none;" target="_blank" href="http://www.lasonde.fr/aide/" title="Aide"><img src="'.LSD_MEMBER_PLUGIN_IMAGES.'intero.png" alt="" /> Besoin d\'aide ?</a><br />
-				<a style="text-decoration:none;" target="_blank" href="http://www.lasonde.fr/nous-contacter/" title="Nous contacter"><img src="'.LSD_MEMBER_PLUGIN_IMAGES.'mail.png" alt="" /> Nous contacter</a><br />
+				<a style="text-decoration:none;" target="_blank" href="http://www.lasonde.fr/aide/" title="Aide"><img src="'.LSD_MEMBER_PLUGIN_IMAGES.'intero.png" alt="" /> '.__('Besoin d\'aide ?','sondages-lasonde').'</a><br />
+				<a style="text-decoration:none;" target="_blank" href="http://www.lasonde.fr/nous-contacter/" title="Nous contacter"><img src="'.LSD_MEMBER_PLUGIN_IMAGES.'mail.png" alt="" /> '.__('Nous contacter','sondages-lasonde').'</a><br />
 			</div>';
 		print $html;
 	} 
 	function LSD_get_Premium_box(){
 		$html ='
 		<table border="0" width="100%">
-			<tr><th valign="top" style="text-align:center;">Membre </th><td valign="top" style="text-align:center;">'.$this->LSD_member_is_premium().'</td></tr>';
+			<tr><th valign="top" style="text-align:center;">'.__('Membre','sondages-lasonde').' </th><td valign="top" style="text-align:center;">'.$this->LSD_member_is_premium().'</td></tr>';
 			if($this->LSD_member_is_premium("bool")==0){
-				$html .= '<tr><td colspan="2" style="text-align:center;"><h4><a style="color:#ff0000;" href="http://www.lasonde.fr/compte-premium/" title="Devenez Membre Premium" target="_blank">Devenez Membre premium pour profiter du service à 100%</a></h4></td></tr>
+				$html .= '<tr><td colspan="2" style="text-align:center;"><h4><a style="color:#ff0000;" href="http://www.lasonde.fr/compte-premium/" title="'.__('Devenez Membre Premium','sondages-lasonde').'" target="_blank">'.__('Devenez Membre premium pour profiter du service à 100%','sondages-lasonde').'</a></h4></td></tr>
 				<tr><td colspan="2">
-					<b>Etre Membre Premium c\'est:</b><br /><br />
-					- Nombre de sondages illimités<br />
-					- Pas de publicité sur le site<br />
-					- Pas de publicité sur les sondages<br /><br /><br />
-					Pour <span style="color:#ff0000;">2,5€/an</span> ou <span style="color:#ff0000;">1 article</span> qui parle de nous 
-					(<a href="http://www.lasonde.fr/compte-premium/" title="Devenez Membre Premium" target="_blank">en savoir plus</a>)
-				</td></tr>
-				';
+					<b>'.__('Etre Membre Premium c\'est:','sondages-lasonde').'</b><br /><br />
+					'.__('- Nombre de sondages illimités','sondages-lasonde').'<br />
+					'.__('- Pas de publicité sur le site','sondages-lasonde').'<br />
+					'.__('- Pas de publicité sur les sondages','sondages-lasonde').'<br /><br /><br />
+					'.__('Pour <span style="color:#ff0000;">2,5€/an</span> ou <span style="color:#ff0000;">1 article</span> qui parle de nous 
+					(<a href="http://www.lasonde.fr/compte-premium/" title="Devenez Membre Premium" target="_blank">en savoir plus</a>)','sondages-lasonde');
 			}
 		$html .='</table>';
 		print $html;
@@ -257,7 +256,7 @@ class wp_LSD_sondages{
 /**********************************************************/
 class LSD_widget extends WP_Widget {
 	function LSD_widget() {
-		$LSD_widjet_info = array('description' => 'Ajouter des sondages' );
+		$LSD_widjet_info = array('description' => __('Ajouter des sondages','sondages-lasonde') );
         parent::WP_Widget(false, LSD_PLUGIN_TITLE,$LSD_widjet_info);	
     }
 	function form($instance) {
@@ -273,11 +272,11 @@ class LSD_widget extends WP_Widget {
 		
 		print '
 		<p>
-			<label for="list_sd_id">'._e('Sondage à insérer:').LSD_get_list_sondages($this->get_field_name('list_sd_id')).'</label>
+			<label for="list_sd_id">'._e('Sondage à insérer:','sondages-lasonde').LSD_get_list_sondages($this->get_field_name('list_sd_id')).'</label>
 		</p>';
 		print '
 		<p>
-			<label for="br">'._e('Saut de ligne avant le sondage ?').'<input type="radio" name="'.$this->get_field_name('br').'"  '.($br==1?'checked="checked"':'').' value="1"/> Oui <input type="radio" name="'.$this->get_field_name('br').'"  '.($br==0?'checked="checked"':'').' value="0"/> Non</label>
+			<label for="br">'._e('Saut de ligne avant le sondage ?','sondages-lasonde').'<input type="radio" name="'.$this->get_field_name('br').'"  '.($br==1?'checked="checked"':'').' value="1"/> '.__('Oui','sondages-lasonde').' <input type="radio" name="'.$this->get_field_name('br').'"  '.($br==0?'checked="checked"':'').' value="0"/> '.__('Non','sondages-lasonde').'</label>
 		</p>';
 	}
 	function update($new_instance, $old_instance) {

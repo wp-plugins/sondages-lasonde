@@ -1,7 +1,7 @@
 <?php
 /*******************************************************************************************
 Plugin Name: Sondages-Lasonde
-Version: 1.2.4
+Version: 1.2.4.1
 Plugin URI: http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/
 Description: Plugins Lasonde.fr pour ajouter des sondages facilement avec wordpress
 Author: Lasonde.fr
@@ -27,6 +27,16 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 *******************************************************************************************/
 
+
+//pour avoir la traduction dans les appel vers lasonde.fr
+$domain_core = "en";
+if (defined('WPLANG'))
+	if(WPLANG == "fr_FR")
+		$domain_core = "www";
+	elseif(WPLANG== "en_US" OR WPLANG== "en_GB")
+		$domain_core = "en";
+	
+
 if ( !defined('WP_CONTENT_DIR') )
     define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
     
@@ -40,10 +50,8 @@ if ( !defined('LSD_MEMBER_PLUGIN_URL') )
     define( 'LSD_MEMBER_PLUGIN_URL',  get_bloginfo('siteurl').'/wp-content/plugins/'.basename(dirname(__FILE__)).'/');
 
 if ( !defined('LSD_CORE') )
-    define( 'LSD_CORE',  'http://www.lasonde.fr/wp-content/plugins/lasonde/LSD_core/');
+    define( 'LSD_CORE',  'http://'.$domain_core.'.lasonde.fr/wp-content/plugins/lasonde/LSD_core/');
 
-if ( !defined('LSD_PLUGIN_TITLE') )
-    define( 'LSD_PLUGIN_TITLE', __('Sondages Lasonde.fr','sondages-lasonde') );
 
 class wp_LSD_sondages{
 
@@ -53,6 +61,9 @@ class wp_LSD_sondages{
 		add_shortcode('lasonde', array(&$this,'LSD_script_tag'));
 		add_action('widgets_init', array(&$this,'LSD_register_widget'));
 		add_action('wp_print_scripts', array(&$this,'LSD_register_js'));
+		load_plugin_textdomain( 'sondages-lasonde', false, dirname(plugin_basename(__FILE__ )) . '/langs' );
+		if ( !defined('LSD_PLUGIN_TITLE') )
+    		define( 'LSD_PLUGIN_TITLE', __('Sondages Lasonde.fr','sondages-lasonde') );
 	}
 	
 	/**********************************************************/
@@ -87,9 +98,10 @@ class wp_LSD_sondages{
 		wp_enqueue_script('postbox');
 	    wp_enqueue_script('lasonde_sondage_JS',LSD_CORE.'js/lasonde_sondages_min.js');
 		add_meta_box("LSD_options", 'Options', array(&$this,LSD_get_options_box),  $this->LSD_admin_hook , 'normal', 'core');
-		add_meta_box("LSD_Premium", 'Status Lasonde.fr', array(&$this,LSD_get_Premium_box),  $this->LSD_admin_hook , 'side', 'core');
+		add_meta_box("LSD_Premium", __('Statut','sondages-lasonde').' Lasonde.fr', array(&$this,LSD_get_Premium_box),  $this->LSD_admin_hook , 'side', 'core');
 		add_meta_box("LSD_info", 'Informations', array(&$this,LSD_get_info_box),  $this->LSD_admin_hook , 'side', 'core');
-		add_meta_box("LSD_donation", 'FAITES UN DON', array(&$this,LSD_get_donation_box),  $this->LSD_admin_hook , 'side', 'core');
+		add_meta_box("LSD_donation", __('FAITES UN DON','sondages-lasonde'), array(&$this,LSD_get_donation_box),  $this->LSD_admin_hook , 'side', 'core');
+		add_meta_box("LSD_rate", __('Notez ce plugin!','sondages-lasonde'), array(&$this,LSD_get_rate_box),  $this->LSD_admin_hook , 'normal', 'core');
 	}
 	function LSD_get_list_sondages($select_id){
 		$form = file_get_contents(LSD_CORE.'bdd-sondages.php?step=5&select_id='.$select_id.'&secret_key='.get_option('lsd_user_api_secret'));
@@ -120,7 +132,7 @@ class wp_LSD_sondages{
 			   </div>
 			</div>
 			<?php if(get_option('lsd_user_api_secret')=='')
-				print '<div id="message" class="error fade"><p>'.__('Pour récupérer vos sondages, il faut renseigner votre clé secrète lasonde.fr (disponible dans votre compte sur <a href="http://www.lasonde.fr/les-sondages/tableau-de-bord/','sondages-lasonde').'" title="lasonde.fr">Lasonde.fr</a>)</p></div>';
+				print '<div id="message" class="error fade"><p>'.sprintf(__('Pour récupérer vos sondages, il faut renseigner votre clé secrète lasonde.fr (disponible dans votre compte sur %1$s)','sondages-lasonde'),'<a href="http://www.lasonde.fr/les-sondages/tableau-de-bord/" title="lasonde.fr">Lasonde.fr</a>').'</p></div>';
 			?>
 		</div>
 		</form>
@@ -141,15 +153,13 @@ class wp_LSD_sondages{
 	function LSD_get_options_box(){ 
 		
 	   print'<h4>'.__('Vous pouvez ajouter des sondages de différentes manières:','sondages-lasonde').'</h4>
-		<p>'.__('- Dans vos articles et dans vos pages, soit via l\'outil présent dans l\'éditeur soit en ajoutant un code directement dans le texte.<br />
-		exemple code manuel: <i><b>[lasonde sd_id="<span style="color:#FF0000">XXX</span>"]</b></i></p>
-		<p>- Dans l\'editeur d\'apparence, en ajoutant des widgets Sondages-Lasonde à vos sidebars.</p>
-		<p>- Directement dans vos templates en appellant la fonction "<i><b>LSD_print_script_tag(<span style="color:#FF0000">XXX</span>);</b></i>"
-		 où <b>XXX</b> est l\'identifiant du sondage fourni dans votre tableau de bord lasonde.fr</p>
-		','sondages-lasonde').'</p>
+		<p>'.__('- Dans vos articles et dans vos pages, soit via l\'outil présent dans l\'éditeur soit en ajoutant un code directement dans le texte.','sondages-lasonde').'<br />
+		'.__('exemple code manuel:','sondages-lasonde').'<i><b>[lasonde sd_id="<span style="color:#FF0000">XXX</span>"]</b></i></p>
+		<p>'.__('- Dans l\'editeur d\'apparence, en ajoutant des widgets Sondages-Lasonde à vos sidebars.','sondages-lasonde').'</p>
+		<p>'.sprintf(__('- Directement dans vos templates en appellant la fonction %s','sondages-lasonde'),'"<i><b>LSD_print_script_tag(<span style="color:#FF0000">XXX</span>);</b></i>"').' '.sprintf(__('où %s est l\'identifiant du sondage fourni dans votre tableau de bord lasonde.fr','sondages-lasonde'),'<b>XXX</b>').'</p>
 			<table border="0">
 			<tr>
-				<th>'.__('Clé secrète Lasonde','sondages-lasonde').'</th><td><input type="text" name="lsd_user_api_secret" value="'.get_option('lsd_user_api_secret').'" /> <i>'.__('Cette clé est privée, vous pouvez l\'obtenir sur <a href="http://www.lasonde.fr/les-sondages/tableau-de-bord/" title="lasonde.fr">Lasonde.fr / Tableau de bord','sondages-lasonde').'</a></i></td>
+				<th>'.__('Clé secrète Lasonde','sondages-lasonde').'</th><td><input type="text" name="lsd_user_api_secret" value="'.get_option('lsd_user_api_secret').'" /> <i>'.sprintf(__('Cette clé est privée, vous pouvez l\'obtenir sur %1$s Lasonde.fr / Tableau de bord %2$s','sondages-lasonde'),'<a href="'.__('http://www.lasonde.fr/les-sondages/tableau-de-bord/','sondages-lasonde').'" title="lasonde.fr">','</a>').'</a></i></td>
 			</tr>
 			</table>
 			<br />
@@ -162,13 +172,20 @@ class wp_LSD_sondages{
 		$html ='
 			<div style="text-align:center;">
 			<h4>'.__('Pour nous aider à supporter ce plugin :)','sondages-lasonde').'</h4>
-			<a href="http://wordpress.org/extend/plugins/sondages-lasonde/" title="'.__('Votez Sondages-Lasonde','sondages-lasonde').'" target="_blank">'.__('Si vous aimer ce plugin, dites le!','sondages-lasonde').'<br />'.__('Noter ce plugin','sondages-lasonde').'</a><br />
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<input type="hidden" name="cmd" value="_s-xclick">
 				<input type="hidden" name="hosted_button_id" value="QG7RJWETHLVZL">
-				<input type="image" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="'.__('PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !','sondages-lasonde').'">
+				<input type="image" src="https://www.paypal.com/'.__('fr_FR/FR','sondages-lasonde').'/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="'.__('PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !','sondages-lasonde').'">
 				<img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
 			</form>
+			</div>';
+		print $html;
+	} 
+	//note
+	function LSD_get_rate_box(){ 
+		$html ='
+			<div style="text-align:center;">
+			<span style="font-size:20px;"><a href="http://wordpress.org/extend/plugins/sondages-lasonde/" title="'.__('Votez Sondages-Lasonde','sondages-lasonde').'" target="_blank">'.__('Si vous aimer ce plugin, dites le!','sondages-lasonde').'<br /><br />'.__('Noter ce plugin','sondages-lasonde').'</a></b></span>
 			</div>';
 		print $html;
 	} 
@@ -176,8 +193,8 @@ class wp_LSD_sondages{
 	function LSD_get_info_box(){ 
 		$html ='
 			<div style="text-align:left;">
-				<a style="text-decoration:none;" target="_blank" href="http://www.lasonde.fr/aide/" title="Aide"><img src="'.LSD_MEMBER_PLUGIN_IMAGES.'intero.png" alt="" /> '.__('Besoin d\'aide ?','sondages-lasonde').'</a><br />
-				<a style="text-decoration:none;" target="_blank" href="http://www.lasonde.fr/nous-contacter/" title="Nous contacter"><img src="'.LSD_MEMBER_PLUGIN_IMAGES.'mail.png" alt="" /> '.__('Nous contacter','sondages-lasonde').'</a><br />
+				<a style="text-decoration:none;" target="_blank" href="http://www.lasonde.fr/aide/" title="Aide"><img src="'.LSD_MEMBER_PLUGIN_IMAGES.'intero.png" alt="" style="vertical-align:middle;"/> '.__('Besoin d\'aide ?','sondages-lasonde').'</a><br />
+				<a style="text-decoration:none;" target="_blank" href="http://www.lasonde.fr/nous-contacter/" title="Nous contacter"><img src="'.LSD_MEMBER_PLUGIN_IMAGES.'mail.png" alt="" style="vertical-align:middle;"/> '.__('Nous contacter','sondages-lasonde').'</a><br />
 			</div>';
 		print $html;
 	} 
@@ -192,8 +209,12 @@ class wp_LSD_sondages{
 					'.__('- Nombre de sondages illimités','sondages-lasonde').'<br />
 					'.__('- Pas de publicité sur le site','sondages-lasonde').'<br />
 					'.__('- Pas de publicité sur les sondages','sondages-lasonde').'<br /><br /><br />
-					'.__('Pour <span style="color:#ff0000;">2,5€/an</span> ou <span style="color:#ff0000;">1 article</span> qui parle de nous 
-					(<a href="http://www.lasonde.fr/compte-premium/" title="Devenez Membre Premium" target="_blank">en savoir plus</a>)','sondages-lasonde');
+					'.sprintf(__('Pour %1$s ou %2$s qui parle de nous (%3$s en savoir plus %4$s)','sondages-lasonde'),
+						'<span style="color:#ff0000;">5€/'.__('an','sondages-lasonde').'</span>',
+						'<span style="color:#ff0000;">1 '.__('article','sondages-lasonde').'</span>',
+						'<a href="'.__('http://www.lasonde.fr/compte-premium/','sondages-lasonde').'" target="_blank">',
+						'</a>'
+						);
 			}
 		$html .='</table>';
 		print $html;
@@ -201,7 +222,7 @@ class wp_LSD_sondages{
 	
 	
 	/**********************************************************/
-	//function Bouton laonde edit
+	//function Bouton lasonde edit
 	/**********************************************************/
 	//on créer le bouton
 	function LSD_add_buttons_editor() {
@@ -220,7 +241,7 @@ class wp_LSD_sondages{
 	 
 	//on charge la fonction du plugin en js
 	function add_LSD_member_plugins_tinymce_plugin($plugin_array) {
-	   $plugin_array['LSD_plugin_tags'] = LSD_MEMBER_PLUGIN_URL.'LSD_editor_plugin.js';
+	   $plugin_array['LSD_plugin_tags'] = LSD_MEMBER_PLUGIN_URL.'button/LSD_editor_plugin.js';
 	   return $plugin_array;
 	}
 	
@@ -232,6 +253,7 @@ class wp_LSD_sondages{
 		$return = file_get_contents(LSD_CORE.'bdd-sondages.php?step=7&user_id='.$user_id.'&secret_key='.get_option('lsd_user_api_secret').'&type='.$type);
 		if($return!='')
 			return $return;
+			
 	}
 	function LSD_print_script_tag($sd_id){
 		print $this->LSD_get_script_tag($sd_id);

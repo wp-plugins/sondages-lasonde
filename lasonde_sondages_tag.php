@@ -39,7 +39,7 @@ function LSD_insert_code(formObj){
 		<table><tr><th><?php _e('Choix du sondage à insérer','sondages-lasonde'); ?></th><td><?php print $form_list_sondage; ?></td></tr></table>
 		<div class="mceActionPanel">
 			<div style="margin: 8px auto; text-align: center; padding-bottom: 10px;">
-				<?php if(!ereg('avez pas de sondages',$form_list_sondage) OR !ereg('You have no surveys',$form_list_sondage)){ ?>
+				<?php if(!ereg('avez pas de sondages',$form_list_sondage) && !ereg('You have no surveys',$form_list_sondage)){ ?>
 					<input type="button" id="cancel" name="insert" value="<?php _e('Insérer','sondages-lasonde'); ?>" onclick="LSD_insert_code(this.form)" />
 				<?php } ?>
 				<input id="cancel" name="cancel" value="<?php _e('Fermer','sondages-lasonde'); ?>" title="Fermer" onclick="tinyMCEPopup.close();" type="button" />

@@ -7,6 +7,7 @@ Description: Plugins Lasonde.fr pour ajouter des sondages facilement avec wordpr
 Author: Lasonde.fr
 Author URI: http://www.lasonde.fr/nous-contacter/
 Text Domain: sondages-lasonde
+Domain Path: /langs
 *******************************************************************************************/
 
 /*******************************************************************************************

@@ -4,7 +4,7 @@ Donate link: http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/
 Tags: Lasonde, lasonde.fr,polls, do a poll, create polls, surveys, blogs, polls, survey, sondage, sondages, créer un sondage, faire un sondage, administration sondage, sondages gratuits, free polls
 Requires at least: 2.8
 Tested up to: 3.1
-Stable tag: 1.2.4.1
+Stable tag: 1.2.4.2
 
 Lasonde.fr can add polls on wordpress sites ...
 MultiLang 

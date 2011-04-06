@@ -330,7 +330,7 @@ class wp_LSD_sondages{
 	        $c = curl_init();
 	        curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
 	        curl_setopt($c, CURLOPT_URL, $url);
-	        curl_setopt($c, CURLOPT_CONNECTTIMEOUT, '2');
+	        curl_setopt($c, CURLOPT_CONNECTTIMEOUT, $this->lsd_request_timeout);
 	        $contents = curl_exec($c);
 	        curl_close($c);
 		}else{

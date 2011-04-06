@@ -30,15 +30,21 @@
 		},
 		// Private methods
 		_mce_LSD_plugin : function() { //va ouvrir une pop up avec le choix du sondage
-			var postnumber = document.getElementById('post_ID').value;		
-			tinyMCE.activeEditor.windowManager.open( {
-				url : tinyMCE.activeEditor.documentBaseURI + '../../../wp-content/plugins/sondages-lasonde/lasonde_sondages_tag.php?post='+postnumber,
+			var postnumber = document.getElementById('post_ID').value;
+			var url  = tinyMCE.activeEditor.documentBaseURI + '../../../wp-content/plugins/sondages-lasonde/lasonde_sondages_tag.php';
+			/*tinyMCE.activeEditor.windowManager.open( {
+				url : tinyMCE.activeEditor.documentBaseURI + '../../../wp-content/plugins/sondages-lasonde/lasonde_sondages_tag.php?TB_iframe=true&post='+postnumber,
 				width : 440,
 				height : 220,
 				resizable : 'no',
 				scrollbars : 'no',
 				inline : 'yes'
-			}, { /* custom parameter space */ });
+			}, { /* custom parameter space */ //});
+			// call lightbox to show the embed
+			//alert(url);
+			// pepare the url
+			alert(url);
+			tb_show('Lasonde.fr Generator', url+'?width=300&height=400&TB_iframe=true&post='+postnumber , false);
 			return true;
 		}
 		

@@ -3,24 +3,21 @@ Contributors: Lasonde.fr
 Donate link: http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/
 Tags: Lasonde, lasonde.fr,polls, do a poll, create polls, surveys, blogs, polls, survey, sondage, sondages, crŽer un sondage, faire un sondage, administration sondage, sondages gratuits, free polls
 Requires at least: 2.8
-Tested up to: 3.2
-Stable tag: 1.2.4.2
+Tested up to: 3.1.1
+Stable tag: 1.2.3
 
 Lasonde.fr can add polls on wordpress sites ...
 MultiLang 
 Free and Easy to integrate.
 
 == Description ==
-
 Lasonde to create polls.
 
 = Langs: =
-
 - English (en_GB, en_US)
 - French (fr_FR)
 
 = Features: =
-
 - Replies (radio or checkbox for multiple votes) (unlimited)
 - Date of Poll
 - End date of survey
@@ -35,7 +32,6 @@ Lasonde to create polls.
 - Show or hide the results.
 
 = You can add polls with the plugin: =
-
 - Using the button in the editor Polls Lasonde articles or pages (WYSIWYG)
 - Using Widgets Polls-Lasonde in your sidebars,
 - Adding a tag `[Lasonde sd_id =" XXX "]` in articles and pages
@@ -44,7 +40,6 @@ Lasonde to create polls.
 
 
 == Installation ==
-
 1. Unzip and upload `sondages-lasonde` in directory `/wp-content/plugins/`
 2. Activate the plugin via the Plugins menu in WordPress
 3. Tag, function php `LSD_print_script_tag()` and `button (WYSIWYG)` are enabled.
@@ -81,15 +76,14 @@ To enable this feature on your server, you must have a php version > 4.3 and ver
 
 
 == Changelog ==
-
-= 1.2.5 =
+= 1.3 =
 Add `curl` and replace `file_get_contents` Connection to Lasonde.fr
 Add timeOut for curl and file get contents.
 If curl is not working the plugin will try `file_get_contents`
 
 == Upgrade Instructions ==
-= 1.2.5 =
-Extract plugin content into your /wp-content/plugins dir, activate the plugin.
+= 1.3 =
+Extract plugin content into your `/wp-content/plugins` dir, activate the plugin. You can upgrade from admin.
 
 Go to [Lasonde.fr / wordpress plugin] (http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/ "Install Polls Lasonde on wordpress)
 

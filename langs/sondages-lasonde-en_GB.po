@@ -1,0 +1,292 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: lasonde_plugin_member.php:188
+#@ sondages-lasonde
+msgid "- Dans l'editeur d'apparence, en ajoutant des widgets Sondages-Lasonde à vos sidebars."
+msgstr "- In the appearance editor, adding widgets Polls-Lasonde in your sidebars."
+
+#: lasonde_plugin_member.php:186
+#@ sondages-lasonde
+msgid "- Dans vos articles et dans vos pages, soit via l'outil présent dans l'éditeur soit en ajoutant un code directement dans le texte."
+msgstr "- In your posts and your pages, either via this tool in the editor either by adding code directly in the text."
+
+#: lasonde_plugin_member.php:189
+#, php-format
+#@ sondages-lasonde
+msgid "- Directement dans vos templates en appellant la fonction %s"
+msgstr "- Directly in your template by calling function %s"
+
+#: lasonde_plugin_member.php:254
+#@ sondages-lasonde
+msgid "- Nombre de sondages illimités"
+msgstr "- Unlimited number of surveys"
+
+#: lasonde_plugin_member.php:255
+#@ sondages-lasonde
+msgid "- Pas de publicité sur le site"
+msgstr "- No advertising on the site"
+
+#: lasonde_plugin_member.php:256
+#@ sondages-lasonde
+msgid "- Pas de publicité sur les sondages"
+msgstr "- No advertising on polls"
+
+#: lasonde_plugin_member.php:358
+#@ sondages-lasonde
+msgid "Ajouter des sondages"
+msgstr "Add poll"
+
+#: lasonde_plugin_member.php:238
+#@ sondages-lasonde
+msgid "Besoin d'aide ?"
+msgstr "Need help?"
+
+#: lasonde_plugin_member.php:199
+#, php-format
+#@ sondages-lasonde
+msgid "Cette clé est privée, vous pouvez l'obtenir sur %1$s Lasonde.fr / Tableau de bord %2$s"
+msgstr "This key is private, you can get to %1$s Lasonde.fr / Admin board %2$s"
+
+#: lasonde_sondages_tag.php:40
+#@ sondages-lasonde
+msgid "Choix du sondage à insérer"
+msgstr "Poll to insert"
+
+#: lasonde_plugin_member.php:197
+#@ sondages-lasonde
+msgid "Clé secrète Lasonde"
+msgstr "Secret key Lasonde"
+
+#: lasonde_plugin_member.php:251
+#@ sondages-lasonde
+msgid "Devenez Membre Premium"
+msgstr "Become a Premium Member"
+
+#: lasonde_plugin_member.php:251
+#@ sondages-lasonde
+msgid "Devenez Membre premium pour profiter du service à 100%"
+msgstr "Become a premium member to enjoy the 100% service"
+
+#: lasonde_plugin_member.php:201
+#@ sondages-lasonde
+msgid "Enregistrer"
+msgstr "Save"
+
+#: lasonde_plugin_member.php:253
+#@ sondages-lasonde
+msgid "Etre Membre Premium c'est:"
+msgstr "Be Premium Member is:"
+
+#: lasonde_plugin_member.php:125
+#@ sondages-lasonde
+msgid "FAITES UN DON"
+msgstr "DONATE"
+
+#: lasonde_sondages_tag.php:46
+#@ sondages-lasonde
+msgid "Fermer"
+msgstr "Close"
+
+#: lasonde_sondages_tag.php:44
+#@ sondages-lasonde
+msgid "Insérer"
+msgstr "Insert"
+
+#: lasonde_plugin_member.php:249
+#@ sondages-lasonde
+msgid "Membre"
+msgstr "Member"
+
+#: lasonde_plugin_member.php:381
+#@ sondages-lasonde
+msgid "Non"
+msgstr "No"
+
+#: lasonde_plugin_member.php:229
+#@ sondages-lasonde
+msgid "Noter ce plugin"
+msgstr "Rate this plugin"
+
+#: lasonde_plugin_member.php:126
+#@ sondages-lasonde
+msgid "Notez ce plugin!"
+msgstr "Rate this plugin!"
+
+#: lasonde_plugin_member.php:239
+#@ sondages-lasonde
+msgid "Nous contacter"
+msgstr "Contact Us"
+
+#: lasonde_plugin_member.php:147
+#@ sondages-lasonde
+msgid "Options mises à jour!"
+msgstr "Options updated!"
+
+#: lasonde_plugin_member.php:381
+#@ sondages-lasonde
+msgid "Oui"
+msgstr "Yes"
+
+#: lasonde_plugin_member.php:215
+#@ sondages-lasonde
+msgid "PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !"
+msgstr "PayPal - the online payment solution as simple and secure!"
+
+#: lasonde_plugin_member.php:257
+#, php-format
+#@ sondages-lasonde
+msgid "Pour %1$s ou %2$s qui parle de nous (%3$s en savoir plus %4$s)"
+msgstr "For %1$s or %2$s  talking about us (%3$s read more %4$s)"
+
+#: lasonde_plugin_member.php:211
+#@ sondages-lasonde
+msgid "Pour nous aider à supporter ce plugin :)"
+msgstr "To help us support this plugin:)"
+
+#: lasonde_plugin_member.php:163
+#, php-format
+#@ sondages-lasonde
+msgid "Pour récupérer vos sondages, il faut renseigner votre clé secrète lasonde.fr (disponible dans votre compte sur %1$s)"
+msgstr "To get your polls, you must enter your secret key lasonde.fr (available in your account on %1$s)"
+
+#: lasonde_plugin_member.php:381
+#@ sondages-lasonde
+msgid "Saut de ligne avant le sondage ?"
+msgstr "Newline before the poll?"
+
+#: lasonde_plugin_member.php:377
+#@ sondages-lasonde
+msgid "Sondage à insérer:"
+msgstr "Survey to include:"
+
+#: lasonde_plugin_member.php:77
+#@ sondages-lasonde
+msgid "Sondages Lasonde.fr"
+msgstr "Polls Lasonde.fr"
+
+#: lasonde_plugin_member.php:123
+#@ sondages-lasonde
+msgid "Statut"
+msgstr "Status"
+
+#: lasonde_plugin_member.php:229
+#@ sondages-lasonde
+msgid "Votez Sondages-Lasonde"
+msgstr "Vote Lasonde"
+
+#: lasonde_plugin_member.php:185
+#@ sondages-lasonde
+msgid "Vous pouvez ajouter des sondages de différentes manières:"
+msgstr "You can add surveys in several ways:"
+
+#: lasonde_plugin_member.php:258
+#@ sondages-lasonde
+msgid "an"
+msgstr "year"
+
+#: lasonde_plugin_member.php:259
+#@ sondages-lasonde
+msgid "article"
+msgstr "post"
+
+#: lasonde_plugin_member.php:187
+#@ sondages-lasonde
+msgid "exemple code manuel:"
+msgstr "Example Code Manual:"
+
+#: lasonde_plugin_member.php:215
+#@ sondages-lasonde
+msgid "fr_FR/FR"
+msgstr "en_US"
+
+#: lasonde_plugin_member.php:260
+#@ sondages-lasonde
+msgid "http://www.lasonde.fr/compte-premium/"
+msgstr "http://www.lasonde.fr/compte-premium/"
+
+#: lasonde_plugin_member.php:199
+#@ sondages-lasonde
+msgid "http://www.lasonde.fr/les-sondages/tableau-de-bord/"
+msgstr "http://en.lasonde.fr/administration/"
+
+#: lasonde_plugin_member.php:189
+#, php-format
+#@ sondages-lasonde
+msgid "où %s est l'identifiant du sondage fourni dans votre tableau de bord lasonde.fr"
+msgstr "where %s is the ID of the survey provided in your dashboard lasonde.fr"
+
+#. translators: plugin header field 'Name'
+#: lasonde_plugin_member.php:0
+#@ sondages-lasonde
+msgid "Sondages-Lasonde"
+msgstr "Sondages-Lasonde"
+
+#. translators: plugin header field 'PluginURI'
+#: lasonde_plugin_member.php:0
+#@ sondages-lasonde
+msgid "http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/"
+msgstr "http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/"
+
+#. translators: plugin header field 'Description'
+#: lasonde_plugin_member.php:0
+#@ sondages-lasonde
+msgid "Plugins Lasonde.fr pour ajouter des sondages facilement avec wordpress"
+msgstr "Plugins Lasonde.fr - add Survey"
+
+#. translators: plugin header field 'Author'
+#: lasonde_plugin_member.php:0
+#@ sondages-lasonde
+msgid "Lasonde.fr"
+msgstr "Lasonde.fr"
+
+#. translators: plugin header field 'AuthorURI'
+#: lasonde_plugin_member.php:0
+#@ sondages-lasonde
+msgid "http://www.lasonde.fr/nous-contacter/"
+msgstr "http://www.lasonde.fr/contact-us/"
+
+#. translators: plugin header field 'Version'
+#: lasonde_plugin_member.php:0
+#@ sondages-lasonde
+msgid "1.2.4.2"
+msgstr "1.2.4.2"
+
+#: lasonde_plugin_member.php:192
+#@ sondages-lasonde
+msgid "Time Out"
+msgstr "TimeOut"
+
+#: lasonde_plugin_member.php:194
+#@ sondages-lasonde
+msgid "Durée maximale de la tentative d'établissement de la connexion vers l'hôte distant (en secondes). Une valeur nulle aura pour effet de laisser cette tâche au système."
+msgstr "The number of seconds to wait while trying to connect. Use 0 to wait indefinitely."
+
+#: lasonde_plugin_member.php:229
+#@ sondages-lasonde
+msgid "Si vous aimez ce plugin, dites le!"
+msgstr "If you like this plugin, Say It!"
+
+#: lasonde_plugin_member.php:370
+#@ default
+msgid "Title:"
+msgstr ""
+

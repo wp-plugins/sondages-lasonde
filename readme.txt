@@ -66,8 +66,7 @@ in the field provided. Then Save.
 = The plugin does not work on my server =
 If your webserver does not execute the php function `file_get_contents` or `Curl` when the plugin does not work.
 first the plugin will try Curl, if that's not working, plugin will try `file_get_contents` function.
-To enable this feature on your server, you must have a php version > 4.3 and verify that the variable
-`Allow_url_fopen = On` is in your php.ini
+To enable this feature on your server, you must have a php version > 4.3 and verify that the variable `Allow_url_fopen = On` is in your php.ini
 
 == Screenshots ==
 1. Add surveys popup in an article / page

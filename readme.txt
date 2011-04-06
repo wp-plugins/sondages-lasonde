@@ -76,7 +76,7 @@ To enable this feature on your server, you must have a php version > 4.3 and ver
 
 == Changelog ==
 = 1.3 =
-Add `curl` and replace `file_get_contents` Connection to Lasonde.fr
+Add `curl` and replace `file_get_contents` for api
 Add timeOut for curl and file get contents.
 If curl is not working the plugin will try `file_get_contents`
 

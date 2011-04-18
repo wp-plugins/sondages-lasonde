@@ -237,6 +237,7 @@ class wp_LSD_sondages{
 			<div style="text-align:left;">
 				<a style="text-decoration:none;" target="_blank" href="http://www.lasonde.fr/aide/" title="Aide"><img src="'.LSD_MEMBER_PLUGIN_IMAGES.'intero.png" alt="" style="vertical-align:middle;"/> '.__('Besoin d\'aide ?','sondages-lasonde').'</a><br />
 				<a style="text-decoration:none;" target="_blank" href="http://www.lasonde.fr/nous-contacter/" title="Nous contacter"><img src="'.LSD_MEMBER_PLUGIN_IMAGES.'mail.png" alt="" style="vertical-align:middle;"/> '.__('Nous contacter','sondages-lasonde').'</a><br />
+				<a style="text-decoration:none;" target="_blank" href="http://trac.lasonde.fr/" title="Assistance"><img src="'.LSD_MEMBER_PLUGIN_IMAGES.'intero.png" alt="" style="vertical-align:middle;"/> '.__('Assistance en Ligne','sondages-lasonde').'</a><br />
 			</div>';
 		print $html;
 	} 

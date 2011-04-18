@@ -32,17 +32,6 @@ Domain Path: /langs
 *******************************************************************************************/
 
 
-/*
- * Definition langues 
- */
-$domain_core = "en";
-if (defined('WPLANG'))
-	if(WPLANG == "fr_FR")
-		$domain_core = "www";
-	elseif(WPLANG== "en_US" OR WPLANG== "en_GB")
-		$domain_core = "en";
-	
-
 if ( !defined('WP_CONTENT_DIR') )
     define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
     
@@ -56,9 +45,9 @@ if ( !defined('LSD_MEMBER_PLUGIN_URL') )
     define( 'LSD_MEMBER_PLUGIN_URL',  get_bloginfo('siteurl').'/wp-content/plugins/'.basename(dirname(__FILE__)).'/');
 
 if ( !defined('LSD_CORE') )
-    define( 'LSD_CORE',  'http://'.$domain_core.'.lasonde.fr/wp-content/plugins/lasonde/LSD_core/');
+    define( 'LSD_CORE',  'http://www.lasonde.fr/wp-content/plugins/lasonde/LSD_core/');
 
-if ( !defined('LSD_DEFAULT_TIMEOUT_CURL_FILE_GC') )
+if (!defined('LSD_DEFAULT_TIMEOUT_CURL_FILE_GC'))
     define( 'LSD_DEFAULT_TIMEOUT_CURL_FILE_GC',  2);
 
 
@@ -232,7 +221,8 @@ class wp_LSD_sondages{
 	} 
 	/*
 	 * box info
-	 */	function LSD_get_info_box(){ 
+	 */	
+	function LSD_get_info_box(){ 
 		$html ='
 			<div style="text-align:left;">
 				<a style="text-decoration:none;" target="_blank" href="http://www.lasonde.fr/aide/" title="Aide"><img src="'.LSD_MEMBER_PLUGIN_IMAGES.'intero.png" alt="" style="vertical-align:middle;"/> '.__('Besoin d\'aide ?','sondages-lasonde').'</a><br />

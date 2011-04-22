@@ -75,7 +75,7 @@ class wp_LSD_sondages{
 	 */
 	function LSD_plugin_member_init() {
 		//on ajoute le lien vers la page admin avec la fonction admin
-		$this->LSD_admin_hook = add_menu_page(LSD_PAGE_MEMBER_OPTIONS, LSD_PLUGIN_TITLE, 'administrator', LSD_PAGE_MEMBER_OPTIONS, array($this,Lasonde_plugin_options), LSD_MEMBER_PLUGIN_IMAGES.'lasonde_icone.gif');
+		$this->LSD_admin_hook = add_menu_page("Sondages-Lasonde Options", LSD_PLUGIN_TITLE, 'administrator', LSD_PAGE_MEMBER_OPTIONS, array($this,Lasonde_plugin_options), LSD_MEMBER_PLUGIN_IMAGES.'lasonde_icone.gif');
 		add_action('load-'.$this->LSD_admin_hook, array(&$this,'LSD_admin_register_js'));
 	}
 	/*

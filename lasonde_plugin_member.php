@@ -1,7 +1,7 @@
 <?php
 /*******************************************************************************************
 Plugin Name: Sondages-Lasonde
-Version: 1.3
+Version: 1.4
 Plugin URI: http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/
 Description: Plugins Lasonde.fr pour ajouter des sondages facilement avec wordpress
 Author: Lasonde.fr
@@ -60,7 +60,7 @@ class wp_LSD_sondages{
 		add_action('init', array(&$this,'LSD_add_buttons_editor'));
 		add_shortcode('lasonde', array(&$this,'LSD_script_tag'));
 		add_action('widgets_init', array(&$this,'LSD_register_widget'));
-		add_action('wp_print_scripts', array(&$this,'LSD_register_js'));
+		add_action('template_redirect', array(&$this,'LSD_register_js'));
 		load_plugin_textdomain( 'sondages-lasonde', false, dirname(plugin_basename(__FILE__ )) . '/langs' );
 		if ( !defined('LSD_PLUGIN_TITLE') )
     		define( 'LSD_PLUGIN_TITLE', __('Sondages Lasonde.fr','sondages-lasonde') );
@@ -98,6 +98,7 @@ class wp_LSD_sondages{
 	 */
 	function LSD_register_js(){
 		//le script des sondages chez google code.
+		//wp_enqueue_script('lasonde_sondage_JS',LSD_MEMBER_PLUGIN_URL.'lasonde_sondages.js');
 		wp_enqueue_script('lasonde_sondage_JS','http://lasonde-javascript-hosting.googlecode.com/svn/trunk/lasonde_sondages_min.js');
 	}
 	/*
@@ -107,12 +108,14 @@ class wp_LSD_sondages{
 		wp_enqueue_script('common');
 		wp_enqueue_script('wp-list');
 		wp_enqueue_script('postbox');
-	    wp_enqueue_script('lasonde_sondage_JS',LSD_CORE.'js/lasonde_sondages_min.js');
+	    wp_enqueue_script('lasonde_sondage_JS','http://lasonde-javascript-hosting.googlecode.com/svn/trunk/lasonde_sondages_min.js');
 		add_meta_box("LSD_options", 'Options', array(&$this,LSD_get_options_box),  $this->LSD_admin_hook , 'normal', 'core');
 		add_meta_box("LSD_Premium", __('Statut','sondages-lasonde').' Lasonde.fr', array(&$this,LSD_get_Premium_box),  $this->LSD_admin_hook , 'side', 'core');
 		add_meta_box("LSD_info", 'Informations', array(&$this,LSD_get_info_box),  $this->LSD_admin_hook , 'side', 'core');
 		add_meta_box("LSD_donation", __('FAITES UN DON','sondages-lasonde'), array(&$this,LSD_get_donation_box),  $this->LSD_admin_hook , 'side', 'core');
-		add_meta_box("LSD_rate", __('Notez ce plugin!','sondages-lasonde'), array(&$this,LSD_get_rate_box),  $this->LSD_admin_hook , 'normal', 'core');
+		add_meta_box("LSD_rate", __('Notez ce plugin!','sondages-lasonde'), array(&$this,LSD_get_rate_box),  $this->LSD_admin_hook , 'side', 'core');
+		add_meta_box("LSD_lasonde_iframe", __('Lasonde.fr directement dans votre wordpress','sondages-lasonde'), array(&$this,LSD_get_lasonde_box),  $this->LSD_admin_hook , 'normal', 'core');
+	
 	}
 	/*
 	 * on liste les sondages
@@ -215,7 +218,7 @@ class wp_LSD_sondages{
 	function LSD_get_rate_box(){ 
 		$html ='
 			<div style="text-align:center;">
-			<span style="font-size:20px;"><a href="http://wordpress.org/extend/plugins/sondages-lasonde/" title="'.__('Votez Sondages-Lasonde','sondages-lasonde').'" target="_blank">'.__('Si vous aimez ce plugin, dites le!','sondages-lasonde').'<br /><br />'.__('Noter ce plugin','sondages-lasonde').'</a></b></span>
+			<p style="font-size:20px;"><a href="http://wordpress.org/extend/plugins/sondages-lasonde/" title="'.__('Votez Sondages-Lasonde','sondages-lasonde').'" target="_blank">'.__('Si vous aimez ce plugin, dites le!','sondages-lasonde').'<br /><br />'.__('Noter ce plugin','sondages-lasonde').'</a></b></p>
 			</div>';
 		print $html;
 	} 
@@ -232,7 +235,7 @@ class wp_LSD_sondages{
 		print $html;
 	} 
 	/*
-	 * la box de l'admin
+	 * box admin
 	 */
 	function LSD_get_Premium_box(){
 		$html ='
@@ -255,6 +258,23 @@ class wp_LSD_sondages{
 		$html .='</table>';
 		print $html;
 	}
+	/*
+	 * box iframe
+	 */
+	function LSD_get_lasonde_box(){
+        ?>
+	    <script type="text/javascript">
+            jQuery(document).ready(function(){
+                jQuery("#laucncher_iframe_lasonde").click(function(event){
+                    event.preventDefault();
+                    var lasonde_frame = '<iframe id="iframe_lasonde" name="Lasonde.fr" SRC="http://www.lasonde.fr" scrolling="yes" height="400" width="100%" FRAMEBORDER="no">';
+                    jQuery("#iframe_lasonde_content").html(lasonde_frame); 
+                });
+            });
+	    </script>
+	    <?php
+		echo '<div id="iframe_lasonde_content"><a href="#" id="laucncher_iframe_lasonde" title="'.__('Lancer Lasonde.fr','lasonde').'"><p style="font-size:20px;text-align:center;">'.__('Lancer Lasonde.fr directement depuis le plugin','lasonde').'</p></a></div>';
+	} 
 	/*
 	 * on créer le bouton tiny
 	 */

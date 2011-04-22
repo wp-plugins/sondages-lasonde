@@ -6,7 +6,7 @@ Requires at least: 2.8
 Tested up to: 3.1.1
 Stable tag: 1.4
 
-To read this page in French you can Go to [Lasonde.fr / wordpress plugin (FR)] (http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/ "Install Polls Lasonde on wordpress (FR)")
+To read this page in French you can Go to [this page](http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/ "Install Polls Lasonde on wordpress FR")
 
 Lasonde.fr can add polls on wordpress sites ...
 MultiLang 
@@ -78,7 +78,7 @@ If curl is not working the plugin will try `file_get_contents`
 = 1.3 =
 Extract plugin content into your `/wp-content/plugins` dir, activate the plugin. You can upgrade from admin.
 
-Go to [Lasonde.fr / wordpress plugin] (http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/ "Install Polls Lasonde on wordpress")
+Go to [Lasonde.fr / wordpress plugin](http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/ "Install Polls Lasonde on wordpress")
 
 
 

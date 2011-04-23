@@ -6,7 +6,7 @@ Requires at least: 2.8
 Tested up to: 3.1.1
 Stable tag: 1.4
 
-To read this page in French you can Go to [this page](http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/ "Install Polls Lasonde on wordpress FR")
+To read this page in French you can Go to [this page](http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/ "FR")
 
 Lasonde.fr can add polls on wordpress sites ...
 MultiLang 

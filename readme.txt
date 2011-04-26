@@ -4,7 +4,7 @@ Donate link: http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/
 Tags: Lasonde, lasonde.fr,polls, do a poll, create polls, surveys, blogs, polls, survey, sondage, sondages, créer un sondage, faire un sondage, administration sondage, sondages gratuits, free polls
 Requires at least: 2.8
 Tested up to: 3.1.1
-Stable tag: 1.4
+Stable tag: 1.4.1
 
 To read this page in French you can Go to [this page](http://www.lasonde.fr/plugin-sondages-lasonde-fr-pour-wordpress/ "FR")
 
@@ -65,6 +65,8 @@ Or you can use the Iframe system directly in your plugin Lasonde.fr
 
 
 == Changelog ==
+= 1.4.1 =
+Modify print script JS method.
 = 1.4 =
 Add Iframe in Admin to manage survey
 Minify some js
